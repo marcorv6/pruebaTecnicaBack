@@ -22,10 +22,11 @@ const login = async (body) => {
     include: [{ model: UserType }, {model: Gender}],
   }).then((res) => {
     if (!res) throw new Error('No existe este usuario.');
+    if (res.dataValues.status === false) throw new Error('Este usuario no está activo.');
     if (comparar(password, res.password)) {
       delete res.dataValues.password;
       return {
-        Usuario: res,
+        User: res,
         token: crearToken(res.idUsuario),
       };
     }

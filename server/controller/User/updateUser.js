@@ -43,7 +43,7 @@ const updateUser = async (body) => {
 
       return User.update(dataUpdate, { where: { userId } });
     })
-    .then(() => ({ message: 'Se actualizó correctamente el equipo.' }));
+    .then(() => ({ message: 'Se actualizó correctamente el usuario.' }));
 };
 
 module.exports = updateUser;

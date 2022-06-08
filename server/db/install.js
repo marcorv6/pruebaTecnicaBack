@@ -31,7 +31,7 @@ const sync = async () => {
 };
 
 const dataUserType = async () => {
-  const data = ['Admin', 'User'];
+  const data = ['Admin', 'Usuario'];
 
   console.log('\nPaso 3) Instalando catalogo User Type.'.bold.blue);
   for (let i = 0; i < data.length; i++)

@@ -17,20 +17,32 @@ User.init(
     email: {
       type: DataTypes.STRING(100),
       isEmail: true,
-      unique: true,
+      unique: {
+        args: true,
+        msg: "Este correo ya ha sido registrado en la base de datos"
+      },
       allowNull: false
     },
     user: {
       type: DataTypes.STRING(100),
       isAlphanumeric: true,
       allowNull: false,
-      unique: true,
-      len: [7, 100],
+      unique: {
+        args: true,
+        msg: "Este usuario ya ha sido registrado en la base de datos"
+      },
+      len: {
+        args: [7, 100],
+        msg: "Número de caracteres en el usuario no válido"
+      },
     },
     password: {
       type: DataTypes.STRING(60),
       allowNull: false,
-      len: [10, 100],
+      len: {
+        args: [10, 100],
+        msg: "Número de caracteres en la contraseña no válido"
+      },
     },
     status: {
       type: DataTypes.BOOLEAN,

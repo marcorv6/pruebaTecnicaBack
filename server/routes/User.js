@@ -29,7 +29,7 @@ app.get(`${route}/users`, (req, res) => {
     });
 });
 
-app.post(`${route}/createUser`, (req, res) => {
+app.post(`${route}/createUser`, verificaToken, (req, res) => {
   return createUser(req.body)
     .then((data) => {
       res.status(200).json(data);
@@ -39,7 +39,7 @@ app.post(`${route}/createUser`, (req, res) => {
     });
 });
 
-app.put(`${route}/updateUser`, (req, res) => {
+app.put(`${route}/updateUser`, verificaToken, (req, res) => {
   return updateUser(req.body)
     .then((data) => {
       res.status(200).json(data);
@@ -49,7 +49,7 @@ app.put(`${route}/updateUser`, (req, res) => {
     });
 });
 
-app.post(`${route}/deactivateUser`, (req, res) => {
+app.post(`${route}/deactivateUser`, verificaToken, (req, res) => {
   return deactivateUser(req.body)
     .then((data) => {
       res.status(200).json(data);

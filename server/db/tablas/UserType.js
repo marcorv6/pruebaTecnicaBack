@@ -12,7 +12,7 @@ UserType.init(
       autoIncrement: true,
     },
     userType: {
-      type: DataTypes.STRING(5),
+      type: DataTypes.STRING(7),
       allowNull: false,
     },
   },

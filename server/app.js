@@ -15,12 +15,12 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('API Plantilla'));
+app.get('/', (req, res) => res.send('API PruebaTecnica'));
 
 app.use(require('./routes/index'));
 
 app.listen(Number(process.env.PORT), () =>
   console.log(
-    `API Plantilla corriendo en el puerto: ${process.env.PORT}`.rainbow
+    `API PruebaTecnica corriendo en el puerto: ${process.env.PORT}`.rainbow
   )
 );
